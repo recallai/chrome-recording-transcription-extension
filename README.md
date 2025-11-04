@@ -39,8 +39,8 @@ and is scoped to `https://meet.google.com/*`.
 ## Quick start
 1) Clone and install
 ```
-git clone <your-repo-url>
-cd <repo>
+git clone https://github.com/recallai/Chrome-recording-transcription-extension.git
+cd Chrome-recording-transcription-extension
 npm install
 ```
 
@@ -104,13 +104,14 @@ This compiles TypeScript via `ts-loader` and copies the HTML/manifest to `dist/`
 3. Click the extension icon (puzzle → pin it for quick access).
 
 4. In the popup:
-
-  - **Download Transcript**: Saves **google-meet-transcript-<meeting-id>-<timestamp>.txt**
-  - **Enable Microphone**
-    - The mic prompt may not appear reliably in a popup. If so, the button opens a dedicated `Enable Microphone` page (`micsetup.html`) where you can click `Enable` and allow mic access.
-    - Once granted, the label changes to `Microphone Enabled`.
-  - **Start Recording (tab)**: Starts a recording of the current tab (video + system audio). If mic is enabled and mixing is on (default), your mic is mixed in.
-  - **Stop & Download**: Finalizes and downloads `google-meet-recording-<meeting-id>-<timestamp>.webm.`
+ 
+  - **Download Transcript**: Turn closed captions on then hit Download Transcript after the meeting. This saves **google-meet-transcript-<meeting-id>-<timestamp>.txt**
+  - ** Recording **
+      - **Enable Microphone** - Turn on before you hit "Start Recording" to capture your audio in addition to the audio of the other participants
+        - The mic prompt may not appear reliably in a popup. If so, the button opens a dedicated `Enable Microphone` page (`micsetup.html`) where you can click `Enable` and allow mic access.
+        - Once granted, the label changes to `Microphone Enabled`.
+      - **Start Recording**: Starts a recording of the current tab (video + system audio). If mic is enabled and mixing is on (default), your mic is mixed in.
+      - **Stop & Download**: Finalizes and downloads `google-meet-recording-<meeting-id>-<timestamp>.webm.`
 
 > The extension shows a “REC” badge while recording. All files are saved locally via Chrome’s Downloads API.
 
